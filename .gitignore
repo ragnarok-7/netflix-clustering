@@ -1,0 +1,22 @@
+# Ignore raw dataset and other CSVs in data/
+data/*.csv
+!data/README.md
+
+# Ignore outputs and artifacts
+outputs/
+*.npy
+*.joblib
+
+# Ignore Jupyter and Python temp files
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+
+# Ignore virtual environments
+venv/
+.env/
+*.env
+
+# Ignore OS-specific junk
+.DS_Store
+Thumbs.db
