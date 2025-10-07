@@ -129,7 +129,10 @@ if __name__ == "__main__":
     parser.add_argument("--k", type=int, default=6, help="K for KMeans")
     parser.add_argument("--tfidf_max_features", type=int, default=3000, help="max features for TF-IDF")
     parser.add_argument("--svd_n_components", type=int, default=50, help="n components for TruncatedSVD")
+    parser.add_argument("--n_clusters", type=int, default=5, help="Number of clusters for KMeans")
     args = parser.parse_args()
+
+    km = KMeans(n_clusters=args.n_clusters, random_state=RANDOM_STATE, n_init=10)
     try:
         outp = main(args.csv, args.out, args.sample, args.k, args.tfidf_max_features, args.svd_n_components)
         logger.info("Pipeline finished. Output saved at: %s", outp)
